@@ -1,4 +1,4 @@
-![Laravel View Assertions](:hero)
+![Laravel View Assertions](https://user-images.githubusercontent.com/11269635/115122193-f2b8e580-9fb6-11eb-9604-eb8ba59cc445.jpg)
 
 # Laravel View Assertions
 
