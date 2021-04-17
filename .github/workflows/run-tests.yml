@@ -28,6 +28,11 @@ jobs:
 
             - name: Install Laravel
               run: composer require laravel/framework:${{ matrix.laravel }}
+              if: ${{ matrix.dependency-version == 'highest' }}
+
+            - name: Install Laravel (lowest)
+              run: composer require laravel/framework:${{ matrix.laravel }} --prefer-lowest
+              if: ${{ matrix.dependency-version == 'lowest' }}
 
             - name: Execute tests
               run: vendor/bin/phpunit
