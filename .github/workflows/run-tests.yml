@@ -4,9 +4,10 @@ on: [push, pull_request]
 jobs:
     test:
         name: PHP ${{ matrix.php }} (${{ matrix.dependency-version }})
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
         strategy:
             matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
                 php: [8.0]
                 dependency-version: [highest, lowest]
         steps:
