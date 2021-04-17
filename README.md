@@ -1,31 +1,14 @@
-![:package](:hero)
+![Laravel View Assertions](:hero)
 
-# :package
+# Laravel View Assertions
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-build]][link-build]
 [![StyleCI][ico-styleci]][link-styleci]
-[![PhpStan][ico-phpstan]][link-phpstan]
 
-Short description of the package. What does it do and why should people download
-it? Brag a bit but don't exaggerate. Talk about what's to come and tease small
-pieces of functionality.
-
-> :namespace
-> :package
-> :styleci
-> :hero
-
-
-## Index
-- [Installation](#installation)
-  - [Downloading](#downloading)
-  - [Registering the service provider](#registering-the-service-provider)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+The missing assertions for your views in your Laravel applications.
 
 ## Installation
 You'll have to follow a couple of simple steps to install this package.
@@ -34,7 +17,7 @@ You'll have to follow a couple of simple steps to install this package.
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer require sven/:package
+$ composer require sven/laravel-view-assertions
 ```
 
 Or add the package to your dependencies in `composer.json` and run
@@ -42,34 +25,54 @@ Or add the package to your dependencies in `composer.json` and run
 
 ```json
 {
-    "require": {
-        "sven/:package": "*"
+    "require-dev": {
+        "sven/laravel-view-assertions": "^1.0"
     }
 }
 ```
 
-
-### Registering the service provider
-> Is this a Laravel package?
-
-Next, add the `ServiceProvider` to your `providers` array in `config/app.php`:
-
-```php
-'providers' => [
-    ...
-    Sven\:namespace\ServiceProvider::class,
-];
-```
-
-If you would like to load this package in certain environments only, take a look
-at [sven/env-providers](https://github.com/svenluijten/env-providers).
-
 ## Usage
-Some examples of the code. How should people use it, what options does this package
-provide? Should people be wary of some functionality?
+This package exposes a single trait: `\Sven\LaravelViewAssertions\InteractsWithViews`.
+When you `use` this trait in your tests as below, you'll get access to 4 assertions:
 
 ```php
-Maybe some code?
+<?php
+
+use Sven\LaravelViewAssertions\InteractsWithViews;
+use Illuminate\Foundation\Testing\TestCase;
+
+class ExampleTest extends TestCase
+{
+    use InteractsWithViews;
+
+    public function test_it_creates_a_view()
+    {
+        // ...
+        
+        $this->assertViewExists('some.view-file');
+    }
+
+    public function test_it_does_not_create_a_view()
+    {
+        // ...
+        
+        $this->assertViewNotExists('some.view-file');
+    }
+
+    public function test_the_view_equals()
+    {
+        // ...
+        
+        $this->assertViewEquals('The Expected Contents', 'index');
+    }
+
+    public function test_the_view_does_not_equal()
+    {
+        // ...
+        
+        $this->assertViewNotEquals('This Is Not The Content You\'re Looking For', 'index');
+    }
+}
 ```
 
 ## Contributing
@@ -78,18 +81,16 @@ welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
 though. See the [contributors page](../../graphs/contributors) for all contributors.
 
 ## License
-`sven/:package` is licensed under the MIT License (MIT). Please see the
+`sven/laravel-view-assertions` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sven/:package.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sven/laravel-view-assertions.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sven/:package.svg?style=flat-square
-[ico-build]: https://img.shields.io/travis/svenluijten/:package?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sven/laravel-view-assertions.svg?style=flat-square
+[ico-build]: https://img.shields.io/travis/svenluijten/laravel-view-assertions?style=flat-square
 [ico-styleci]: https://styleci.io/repos/:styleci/shield
-[ico-phpstan]: https://img.shields.io/badge/phpstan-enabled-blue.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/sven/:package
-[link-downloads]: https://packagist.org/packages/sven/:package
-[link-build]: https://travis-ci.org/svenluijten/:package
+[link-packagist]: https://packagist.org/packages/sven/laravel-view-assertions
+[link-downloads]: https://packagist.org/packages/sven/laravel-view-assertions
+[link-build]: https://travis-ci.org/svenluijten/laravel-view-assertions
 [link-styleci]: https://styleci.io/repos/:styleci
-[link-phpstan]: https://github.com/phpstan/phpstan
