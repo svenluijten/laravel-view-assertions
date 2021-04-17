@@ -87,10 +87,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/laravel-view-assertions.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/laravel-view-assertions.svg?style=flat-square
-[ico-build]: https://img.shields.io/travis/svenluijten/laravel-view-assertions?style=flat-square
+[ico-build]: https://img.shields.io/github/workflow/status/svenluijten/laravel-view-assertions/run-tests?style=flat-square
 [ico-styleci]: https://styleci.io/repos/358929420/shield
 
 [link-packagist]: https://packagist.org/packages/sven/laravel-view-assertions
 [link-downloads]: https://packagist.org/packages/sven/laravel-view-assertions
-[link-build]: https://travis-ci.org/svenluijten/laravel-view-assertions
+[link-build]: https://github.com/svenluijten/laravel-view-assertions/actions/workflows/run-tests.yml
 [link-styleci]: https://styleci.io/repos/358929420
