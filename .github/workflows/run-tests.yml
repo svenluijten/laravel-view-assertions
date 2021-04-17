@@ -8,7 +8,6 @@ jobs:
         strategy:
             matrix:
                 php: [8.0]
-                laravel: [^8.0]
                 dependency-version: [highest, lowest]
         steps:
             - uses: actions/checkout@v2
@@ -25,14 +24,6 @@ jobs:
               with:
                 dependency-versions: ${{ matrix.dependency-version }}
                 composer-options: "--prefer-dist"
-
-            - name: Install Laravel
-              run: composer require laravel/framework:${{ matrix.laravel }}
-              if: ${{ matrix.dependency-version == 'highest' }}
-
-            - name: Install Laravel (lowest)
-              run: composer require laravel/framework:${{ matrix.laravel }} --prefer-lowest
-              if: ${{ matrix.dependency-version == 'lowest' }}
 
             - name: Execute tests
               run: vendor/bin/phpunit
