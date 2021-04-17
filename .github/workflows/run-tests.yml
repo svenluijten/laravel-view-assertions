@@ -27,7 +27,7 @@ jobs:
                 composer-options: "--no-suggest --prefer-dist"
 
             - name: Install Laravel
-              run: composer install laravel/framework:${{ matrix.laravel }}
+              run: composer require laravel/framework:${{ matrix.laravel }}
 
             - name: Execute tests
               run: vendor/bin/phpunit
