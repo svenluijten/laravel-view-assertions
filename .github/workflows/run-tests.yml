@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
     test:
-        name: PHP ${{ matrix.php }} (${{ matrix.composer_flags }})
+        name: PHP ${{ matrix.php }} (${{ matrix.dependency-version }})
         runs-on: ubuntu-latest
         strategy:
             matrix:
