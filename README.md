@@ -17,7 +17,7 @@ You'll have to follow a couple of simple steps to install this package.
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer require sven/laravel-view-assertions
+$ composer require sven/laravel-view-assertions --dev
 ```
 
 Or add the package to your dependencies in `composer.json` and run
