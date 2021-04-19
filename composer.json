@@ -1,6 +1,6 @@
 {
     "name": "sven/laravel-view-assertions",
-    "description": "Assert things about your Laravel views in your PhpUnit tests",
+    "description": "Assert things about your Laravel views in your PHPUnit tests",
     "keywords": ["testing", "laravel", "views", "assertions", "blade"],
     "license": "MIT",
     "authors": [
