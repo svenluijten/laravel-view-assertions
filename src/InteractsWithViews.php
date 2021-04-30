@@ -3,10 +3,10 @@
 namespace Sven\LaravelViewAssertions;
 
 use PHPUnit\Framework\Assert as PHPUnit;
-use Sven\LaravelViewAssertions\Constraints\ViewEquals;
-use Sven\LaravelViewAssertions\Constraints\ViewExists;
 use Sven\LaravelViewAssertions\Constraints\ViewDoesNotEqual;
 use Sven\LaravelViewAssertions\Constraints\ViewDoesNotExist;
+use Sven\LaravelViewAssertions\Constraints\ViewEquals;
+use Sven\LaravelViewAssertions\Constraints\ViewExists;
 
 trait InteractsWithViews
 {
