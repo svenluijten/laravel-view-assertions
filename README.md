@@ -33,7 +33,7 @@ Or add the package to your dependencies in `composer.json` and run
 
 ## Usage
 This package exposes a single trait: `\Sven\LaravelViewAssertions\InteractsWithViews`.
-When you `use` this trait in your tests as below, you'll get access to 4 assertions:
+When you `use` this trait in your tests as below, you'll get access to several assertions:
 
 ```php
 <?php
@@ -50,13 +50,15 @@ class ExampleTest extends TestCase
         // ...
         
         $this->assertViewExists('some.view-file');
+        $this->assertViewsExist(['posts.index', 'posts.show']);
     }
 
     public function test_it_does_not_create_a_view()
     {
         // ...
         
-        $this->assertViewNotExists('some.view-file');
+        $this->assertViewDoesNotExist('some.view-file');
+        $this->assertViewsDoNotExist(['posts.edit', 'posts.create']);
     }
 
     public function test_the_view_equals()
@@ -70,7 +72,7 @@ class ExampleTest extends TestCase
     {
         // ...
         
-        $this->assertViewNotEquals('This Is Not The Content You\'re Looking For', 'index');
+        $this->assertViewDoesNotEqual('This Is Not The Content You\'re Looking For', 'index');
     }
 }
 ```

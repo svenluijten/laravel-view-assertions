@@ -5,7 +5,7 @@ namespace Sven\LaravelViewAssertions\Constraints;
 use InvalidArgumentException;
 use PHPUnit\Framework\Constraint\Constraint;
 
-class ViewNotExists extends Constraint
+class ViewDoesNotExist extends Constraint
 {
     protected function matches($other): bool
     {
