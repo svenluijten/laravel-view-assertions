@@ -2,15 +2,15 @@
 
 namespace Sven\LaravelViewAssertions\Tests\Constraints;
 
-use Sven\LaravelViewAssertions\Constraints\ViewNotExists;
+use Sven\LaravelViewAssertions\Constraints\ViewDoesNotExist;
 use Sven\LaravelViewAssertions\Tests\TestCase;
 
-class ViewNotExistsTest extends TestCase
+class ViewDoesNotExistTest extends TestCase
 {
     /** @test */
     public function a_view_exists(): void
     {
-        $this->assertTrue((new ViewNotExists)->evaluate('does-not-exist', '', true));
+        $this->assertTrue((new ViewDoesNotExist)->evaluate('does-not-exist', '', true));
     }
 
     /** @test */
@@ -18,6 +18,6 @@ class ViewNotExistsTest extends TestCase
     {
         $this->makeView('exists');
 
-        $this->assertFalse((new ViewNotExists)->evaluate('exists', '', true));
+        $this->assertFalse((new ViewDoesNotExist)->evaluate('exists', '', true));
     }
 }

@@ -4,7 +4,7 @@ namespace Sven\LaravelViewAssertions\Constraints;
 
 use PHPUnit\Framework\Constraint\Constraint;
 
-class ViewNotEquals extends Constraint
+class ViewDoesNotEqual extends Constraint
 {
     public function __construct(protected string $expected)
     {
