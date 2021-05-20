@@ -26,7 +26,7 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require-dev": {
-        "sven/laravel-view-assertions": "^1.0"
+        "sven/laravel-view-assertions": "^1.1"
     }
 }
 ```
