@@ -27,7 +27,7 @@ class ViewEquals extends Constraint
 
     protected function failureDescription($other): string
     {
-        return 'the content of the view ' . parent::failureDescription($other);
+        return 'the content of the view '.parent::failureDescription($other);
     }
 
     public function toString(): string
